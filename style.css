@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Roboto:wght@400;700&display=swap');
+
+/* 通用样式 */
+body {
+    font-family: 'Noto Sans SC', 'Roboto', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f0f2f5; /* 浅灰色背景 */
+    scroll-behavior: smooth; /* 平滑滚动 */
+}
+
+.container {
+    max-width: 1000px; /* 稍微宽一点 */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.8em;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.3em;
+    padding-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #3498db;
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.05em;
+    color: #555;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-image: linear-gradient(to right, #3498db 0%, #2980b9 100%); /* 渐变色 */
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 30px; /* 更圆润的按钮 */
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 增加阴影 */
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background-image: linear-gradient(to right, #2980b9 0%, #3498db 100%);
+    transform: translateY(-3px); /* 悬停上浮效果 */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50; /* 深色背景 */
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+    background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10 0L0 10V0h10zM20 0L0 20V0h20zM30 0L0 30V0h30zM40 0L0 40V0h40zM50 0L0 50V0h50zM60 0L0 60V0h60zM70 0L0 70V0h70zM80 0L0 80V0h80zM90 0L0 90V0h90zM100 0L0 100V0h100zM100 10L10 100h90zM100 20L20 100h80zM100 30L30 100h70zM100 40L40 100h60zM100 50L50 100h50zM100 60L60 100h40zM100 70L70 100h30zM100 80L80 100h20zM100 90L90 100h10zM0 100h100V0H0z" fill="%2334495e" fill-opacity="0.2"/%3E%3C/svg%3E'); /* subtle geometric pattern */
+    background-size: 20px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before { /* 顶部渐变覆盖 */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.5));
+    z-index: 1;
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    color: #ecf0f1;
+    margin-bottom: 20px;
+    font-size: 3.5em;
+}
+
+header p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    color: #ecf0f1;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-alt {
+    background-color: #e9eff5; /* 略深的浅灰色 */
+}
+
+/* Features Grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-item {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* 更明显的阴影 */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px); /* 悬停上浮 */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-item h3 {
+    color: #3498db;
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.feature-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Solution Items */
+#solution {
+    background: linear-gradient(to bottom, #f0f2f5 0%, #e9eff5 100%);
+}
+
+.solution-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.solution-item h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 1.7em;
+}
+
+.price-box {
+    background-image: linear-gradient(to right, #2ecc71 0%, #27ae60 100%); /* 渐变绿色 */
+    color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 60px;
+    box-shadow: 0 10px 30px rgba(46, 204, 113, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.price-box::before { /* subtle background pattern */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2327ae60" fill-opacity="0.3"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zm0-30V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    z-index: 0;
+    opacity: 0.2;
+}
+
+.price-box .price-value {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    color: #fff; /* Ensure text is white */
+}
+
+.price-box .price-value span {
+    font-size: 0.6em; /* Adjust for dollar sign */
+    vertical-align: super;
+}
+
+.price-box .price-description {
+    font-size: 1.3em;
+    margin-bottom: 35px;
+    color: #f0f0f0;
+    position: relative;
+    z-index: 1;
+}
+
+.price-box .btn-primary {
+    background-image: linear-gradient(to right, #fff 0%, #e0e0e0 100%); /* 白色按钮 */
+    color: #27ae60;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    padding: 15px 35px;
+    position: relative;
+    z-index: 1;
+}
+.price-box .btn-primary:hover {
+    background-image: linear-gradient(to right, #e0e0e0 0%, #fff 100%);
+    color: #27ae60;
+}
+
+
+/* Testimonials */
+#testimonials {
+    background-color: #f0f2f5;
+}
+
+.testimonial-item {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+    font-style: italic;
+    color: #555;
+    text-align: left; /* 调整对齐 */
+    position: relative;
+    border-left: 5px solid #3498db; /* 引用样式 */
+}
+
+.testimonial-item p.client-name {
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+    color: #3498db;
+    font-size: 1.1em;
+}
+
+/* FAQ */
+#faq {
+    background-color: #fff;
+}
+.faq-item {
+    background-color: #f9f9f9; /* 略微不同的背景 */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+
+.faq-item h3 {
+    text-align: left;
+    color: #34495e;
+    margin-top: 0;
+    margin-bottom: 12px;
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px;
+}
+.faq-item h3::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: #3498db;
+    transition: transform 0.3s ease;
+}
+.faq-item.active h3::after {
+    content: '-';
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-item p {
+    text-align: left;
+    color: #666;
+    margin-bottom: 0;
+    display: none; /* 默认隐藏 */
+    margin-top: 15px;
+}
+.faq-item.active p {
+    display: block; /* 激活时显示 */
+}
+
+/* Contact Form */
+#contact {
+    background-color: #e9eff5;
+}
+#contact form {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contact form input[type="text"],
+#contact form input[type="email"],
+#contact form textarea {
+    width: calc(100% - 24px); /* 减去 padding 和 border */
+    padding: 14px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact form input[type="text"]:focus,
+#contact form input[type="email"]:focus,
+#contact form textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+#contact form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+#contact form button {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.2em;
+    border-radius: 30px;
+}
+
+.contact-info {
+    margin-top: 25px;
+    font-size: 1em;
+    color: #777;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    header {
+        padding: 60px 0;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-box .price-value {
+        font-size: 3.5em;
+    }
+
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    #contact form {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1.4em;
+    }
+    header p {
+        font-size: 1.1em;
+    }
+    .price-box .price-value {
+        font-size: 3em;
+    }
+    .price-box .price-description {
+        font-size: 1.1em;
+    }
+}
