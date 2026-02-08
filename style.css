@@ -828,11 +828,13 @@ section {
 }
 
 .qr-code {
-    max-width: 200px;
+    max-width: 250px;
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin: 0 auto 15px;
+    display: block;
+    object-fit: contain;
 }
 
 .qr-note {
@@ -1036,7 +1038,7 @@ footer {
     }
 
     .qr-code {
-        max-width: 180px;
+        max-width: 200px;
     }
 }
 
